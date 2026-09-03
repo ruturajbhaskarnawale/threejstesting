@@ -61,14 +61,26 @@ export class SecureShieldThreeGuard {
     }
   }
 
+  private lastAuditTime: number = 0;
+  private cachedIsClean: boolean = true;
+  private readonly AUDIT_INTERVAL_MS: number = 3000;
+
   /**
-   * ⚠️ PERFORMANCE NOTICE: Evaluates whether user interaction or scene action is safe.
-   * DO NOT call this inside requestAnimationFrame() every single frame; call on interval or on user interaction!
+   * 🛡️ Evaluates whether scene action or user interaction is safe.
+   * Throttled to evaluate at most once every 3 seconds to prevent WebGL context thrashing
+   * and GPU starvation in 60 FPS requestAnimationFrame render loops.
    */
   public isCleanForAction(): boolean {
-    if (!this.sdkInstance) return false;
-    const audit = this.sdkInstance.runScan();
-    return audit.verdict === 'SECURE' && (audit.risk_score || 0) < 50;
+    if (!this.sdkInstance) return true;
+
+    const now = performance.now();
+    if (now - this.lastAuditTime > this.AUDIT_INTERVAL_MS) {
+      this.lastAuditTime = now;
+      const audit = this.sdkInstance.runScan();
+      this.cachedIsClean = audit.verdict === 'SECURE' && (audit.risk_score || 0) < 50;
+    }
+
+    return this.cachedIsClean;
   }
 }
 
