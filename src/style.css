@@ -1,0 +1,67 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #050508;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #fff;
+}
+#webgl-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+.hud-overlay {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  max-width: 500px;
+  pointer-events: none;
+}
+.card {
+  pointer-events: auto;
+  background: rgba(16, 20, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.badge {
+  display: inline-block;
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+h1 { font-size: 1.4rem; margin-bottom: 0.25rem; color: #fff; }
+.subtitle { font-size: 0.85rem; color: #a0aec0; margin-bottom: 1rem; }
+.meta-grid { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+.meta-item {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.meta-item .label { display: block; font-size: 0.7rem; color: #a0aec0; }
+.meta-item .value { font-size: 0.95rem; font-weight: 600; color: #fff; }
+.value.success { color: #48bb78; }
+.secureshield-status-box {
+  background: rgba(72, 187, 120, 0.1);
+  border: 1px solid rgba(72, 187, 120, 0.3);
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+.secureshield-status-box h3 { color: #48bb78; font-size: 0.85rem; margin-bottom: 0.25rem; }
+.secureshield-status-box p { font-size: 0.75rem; color: #cbd5e0; }

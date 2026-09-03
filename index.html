@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureShield Test Website - Three.js (WebGL / 3D Canvas)</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- 3D WebGL Canvas Layer -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Overlay HUD Container -->
+    <div class="hud-overlay">
+      <div class="card">
+        <div class="badge">Framework 13 / 14</div>
+        <h1>SecureShield Test Website - Three.js (WebGL)</h1>
+        <p class="subtitle">Hardware-Accelerated 3D Scene with WebGL Context RASP Monitoring.</p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="label">Renderer:</span>
+            <span class="value">THREE.WebGLRenderer</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">Canvas Protection:</span>
+            <span class="value success">Anti-Fingerprint Guarded</span>
+          </div>
+        </div>
+
+        <div class="secureshield-status-box">
+          <h3>🛡️ SecureShield Protection Status</h3>
+          <p>WebGL RASP ready: <code>src/security/secureshield.ts</code> intercepts shader compile & context hooks.</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
