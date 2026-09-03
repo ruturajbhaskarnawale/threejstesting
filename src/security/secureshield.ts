@@ -28,7 +28,7 @@ export class SecureShieldThreeGuard {
         initializationKey: 'INIT_isRybFg38wbdN8FK1NuAfkZT5oxguYqo',
         tenantId: 'TEN-DENKIA-2542',
         appId: 'ast_app_278325',
-        serverUrl: 'https://api.secureshield.io/api/v1/telemetry/ingest',
+        serverUrl: 'https://radiator-waving-cahoots.ngrok-free.dev/api/v1/telemetry/ingest',
         environment: 'production',            // 🛡️ Set 'production' for live deployment
         skipHandshake: true,
         enableRuntimeIntegrityWatchdog: true,
