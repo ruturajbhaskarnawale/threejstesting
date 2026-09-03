@@ -25,7 +25,7 @@ export class SecureShieldThreeGuard {
       this.sdkInstance = await SecureShield.init({
         headerKey: 'enc:v1:8f9aefbceebad65ec494b159:fc687c51e099f94e8a0130bd305499d6:9ada8f21163da2cec37060ec6e2b30',
         encryptionKey: 'aAbxBC2zK6WXvdB0pMUgua/JX6bJY0ku4618nzB0Ttw=',
-        initializationKey: 'INIT_isRybFg38wbdN8FK1NuAfkZT5oxguYqo',
+        initializationKey: 'INIT_oiiBXzXOyPoLaGhGIGVHyA0YrLe0UnIi',
         tenantId: 'TEN-DENKIA-2542',
         appId: 'ast_app_278325',
         serverUrl: 'https://radiator-waving-cahoots.ngrok-free.dev/api/v1/telemetry/ingest',
